@@ -497,46 +497,6 @@ def support(message):
         bot.send_message(message.chat.id, "Contact to support: @moscow_bitches", reply_markup=keyboard)
 
 
-def faq(message):
-    bot.delete_message(message.chat.id, message.message_id)
-    keyboard = telebot.types.InlineKeyboardMarkup()
-    language = r.get('language' + str(message.chat.id)).decode('utf-8')
-    if str(language) == 'ukr':
-        keyboard.row(
-            telebot.types.InlineKeyboardButton("Вернуться", callback_data='menu')
-        )
-        bot.send_message(message.chat.id, "🍓 Ответы на часто задаваемые вопросы 🍓\n\n"
-                                          "🔥 Как сделать заказ?"
-                                          "Выберите девушку которая вас заинтересует, если она свободна то будет активен напор 'Заказать'\nПісля натиску слідуйте інструкціям в боті.\n\n"
-                                          "🔥 Как происходит оплата?\n"
-                                          "Мы работаем только по полной предоплате на счет YandexMoney / bitcoint / Это вынужденный шаг из-за жалоб самих девушек, так как клиенты часто не имеют серьезных намерений, отказывались платить или даже били и угрожали.\n\n"
-                                          "🔥 Почему нельзя дать на руки\n"
-                                          "Это вынужденный шаг, на который девушки пошли из-за случаев, когда их вызвали молодые без денег / врали что заплатят после / угрожали. Поэтому мы вынуждены работать по другому принципу.\n\n"
-                                          "🔥 Я оплатил, что дальше?\n"
-                                          "Уточняем адрес, девушка через 40-60 мин. приезжает.\n\n"
-                                          "🔥 Есть ли у вас свое место?\n"
-                                          " Так, каждая девушка может принять у себя (квартиры по городу.) Выезд за пределы города обсуждается\n\n"
-                                          "Остались вопросы? \n Пишите: @moscow_bitches"
-
-                         , reply_markup=keyboard)
-    else:
-        keyboard.row(
-            telebot.types.InlineKeyboardButton("Back", callback_data='menu')
-        )
-        bot.send_message(message.chat.id, "🍓 Frequently Asked Questions 🍓\n\n"
-                                          "🔥 How to place an order?"
-                                          "Choose the girl you are interested in, if she is free then there will be an active press 'Order' \nAfter pressing this, follow the instructions in the bot.\n\n"
-                                          "🔥 How is payment made?\n"
-                                          "We only work on a full prepayment for Easypay / bitcoint / This is a forced step through the complaints of the girls themselves, because clients often have no serious intentions, refused to pay or even beat and threatened.\n\n"
-                                          "🔥 Why can't you give it a hand\n"
-                                          "This is a forced move that the girls went through when they were called young without money / lied to pay after / threatened. Therefore, we have to work on a different principle.\n\n"
-                                          "🔥 Do you have a place?\n"
-                                          " Yes, every girl can take (apartments in the city.) Traveling outside the city is discussed\n\n"
-                                          "Any questions left? \nWrite: @moscow_bitches"
-
-                         , reply_markup=keyboard)
-
-
 def bitcoin(message):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
@@ -575,6 +535,41 @@ def getid(message):
     bot.send_message(message.chat.id, 'Что отправить ?')
     chatid = str(message.text)
     bot.register_next_step_handler(message, sendmess, chatid)
+    
+def faq(message):
+    bot.delete_message(message.chat.id, message.message_id)
+    keyboard = telebot.types.InlineKeyboardMarkup()
+    language = r.get('language' + str(message.chat.id)).decode('utf-8')
+    if str(language) == 'ukr':
+        keyboard.row(
+            telebot.types.InlineKeyboardButton("Вернуться", callback_data='menu')
+        )
+        bot.send_message(message.chat.id, "🍓 Ответы на часто задаваемые вопросы 🍓\n\n"
+                                          "🔥 Как сделать заказ?"
+                                          "Выберите девушку которая вас заинтересует, если она свободна то будет активна кнопка 'Заказать'\nПосле нажатия следуйте указаниям бота.\n\n"
+                                          "🔥 Как происходит оплата?\n"
+                                          "Мы работаем только по полной предоплате на счет YandexMoney / bitcoint / Это вынужденный шаг из-за жалоб самих девушек, так как клиенты часто не имеют серьезных намерений, отказывались платить или даже били и угрожали.\n\n"
+                                          "🔥 Почему нельзя дать на руки\n"
+                                          "Это вынужденный шаг, на который девушки пошли из-за случаев, когда их вызвали молодые без денег / врали что заплатят после / угрожали. Поэтому мы вынуждены работать по другому принципу.\n\n"
+                                          "🔥 Я оплатил, что дальше?\n"
+                                          "Уточняем адрес, девушка через 40-60 мин. приезжает.\n\n"
+                                          "🔥 Есть ли у вас свое место?\n"
+                                          " Так, каждая девушка может принять у себя (квартиры по городу.) Выезд за пределы города обсуждается\n\n"
+                                          "Остались вопросы? \nПишите: @moscow_bitches", reply_markup=keyboard)
+    else:
+        keyboard.row(
+            telebot.types.InlineKeyboardButton("Back", callback_data='menu')
+        )
+        bot.send_message(message.chat.id, "🍓 Frequently Asked Questions 🍓\n\n"
+                                          "🔥 How to place an order?"
+                                          "Choose the girl you are interested in, if she is free then there will be an active press 'Order' \nAfter pressing this, follow the instructions in the bot.\n\n"
+                                          "🔥 How is payment made?\n"
+                                          "We only work on a full prepayment for Easypay / bitcoint / This is a forced step through the complaints of the girls themselves, because clients often have no serious intentions, refused to pay or even beat and threatened.\n\n"
+                                          "🔥 Why can't you give it a hand\n"
+                                          "This is a forced move that the girls went through when they were called young without money / lied to pay after / threatened. Therefore, we have to work on a different principle.\n\n"
+                                          "🔥 Do you have a place?\n"
+                                          " Yes, every girl can take (apartments in the city.) Traveling outside the city is discussed\n\n"
+                                          "Any questions left? \nWrite: @moscow_bitches",reply_markup=keyboard)
 
 
 def sendmess(message, chatid):
