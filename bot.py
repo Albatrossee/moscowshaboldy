@@ -95,10 +95,12 @@ def start_command(message):
     r.set((str('nomershluhi') + str(message.chat.id)), int(0))
     r.set((str('Nomerokna') + str(message.chat.id)), int(0))
     r.set('language' + str(message.chat.id), 'ukr')
+    bot.send_message(message.chat.id,'...')
     menu(message)
 
 
 def menu(message):
+  
     try:
         bot.delete_message(message.chat.id, message.message_id)
     except:
