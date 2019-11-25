@@ -4,9 +4,9 @@ from emoji import emojize
 import redis
 from redis import StrictRedis
 
-r = redis.from_url('redis://h:pb75f7d4e39e3203fa456be4b497fdc9caf807cc493d2c9ab54a969338780b8ab@ec2-34-246-8-129.eu-west-1.compute.amazonaws.com:30799')
+r = redis.from_url('redis://h:p6ffcdb9a3ff4c8029c4c3272f6439fcc1d6604076a30f958a5876c8822f4867d@ec2-3-248-105-145.eu-west-1.compute.amazonaws.com:12829')
 
-TOKEN = '1060519841:AAF-mUfKpKKrSYc5r-rCxOaRoBPZ1lPgLzc'
+TOKEN = '971393054:AAHoIokoX134aeHqINis8CrBs5rPsaRVFiA'
 bot = telebot.TeleBot(TOKEN)
 
 heart = emojize(':heart:', use_aliases=True)
@@ -78,14 +78,14 @@ r.set(str('url' + '5'), "https://telegra.ph/Natali-11-23-2")
 r.set(str('url' + '6'), "https://telegra.ph/EHmiliya-11-23")
 r.set(str('url' + '7'), "https://telegra.ph/Kristina-11-23-8")
 
-r.set('price0', int(2500))
-r.set('price1', int(2500))
-r.set('price2', int(2500))
-r.set('price3', int(2500))
-r.set('price4', int(2500))
-r.set('price5', int(2500))
-r.set('price6', int(2500))
-r.set('price7', int(3700))
+r.set('price0', int(150))
+r.set('price1', int(150))
+r.set('price2', int(150))
+r.set('price3', int(150))
+r.set('price4', int(150))
+r.set('price5', int(150))
+r.set('price6', int(150))
+r.set('price7', int(250))
 
 
 @bot.message_handler(commands=['start'])
@@ -280,7 +280,6 @@ def katalog(message):
     user = r.get(str('Username') + str(message.chat.id)).decode('utf-8')
     bot.delete_message(message.chat.id, message.message_id)
     bot.send_message(697601461, "@" + str(user) + "\nВтыкает на " + str(whore))
-    bot.send_message(936806920, "@" + str(user) + "\nВтыкает на " + str(whore))
     language = r.get('language' + str(message.chat.id)).decode('utf-8')
     if str(language) == 'ukr':
         katalogarrows.row(
@@ -426,7 +425,7 @@ def order(message):
     language = r.get('language' + str(message.chat.id)).decode('utf-8')
     if str(language) == 'ukr':
         keyboard.row(
-            telebot.types.InlineKeyboardButton("Оплатить UAH", url='https://telegra.ph/Oplata-11-15'),
+            telebot.types.InlineKeyboardButton("Оплатить RUB", url='https://telegra.ph/Oplata-11-25'),
             telebot.types.InlineKeyboardButton("Оплатить Bitcoin", callback_data='bitcoin')
         )
         keyboard.row(
@@ -434,7 +433,7 @@ def order(message):
         )
     else:
         keyboard.row(
-            telebot.types.InlineKeyboardButton("Pay UAH", url='https://telegra.ph/Oplata-11-15'),
+            telebot.types.InlineKeyboardButton("Pay RUB", url='https://telegra.ph/Oplata-11-25'),
             telebot.types.InlineKeyboardButton("Pay Bitcoin", callback_data='bitcoin')
         )
         keyboard.row(
@@ -506,18 +505,18 @@ def faq(message):
         keyboard.row(
             telebot.types.InlineKeyboardButton("Вернуться", callback_data='menu')
         )
-        bot.send_message(message.chat.id, "🍓 Відповіді на часті запитання 🍓\n\n"
-                                          "🔥 Як зробити замовлення?"
-                                          "Виберіть дівчину яка вас зацікавить, якщо вона вільна то буде активний натиск 'Замовити'\nПісля натиску слідуйте інструкціям в боті.\n\n"
-                                          "🔥 Як відбувається оплата?\n"
-                                          "Ми працюємо тільки за повною передоплатою на рахунок Easypay/bitcoint / Цевимушений крок через скарги самих дівчат, тому що клієнти часто не маютьсерйозних намірів, відмовлялися платити або навіть били та погрожували.\n\n"
-                                          "🔥 Чому не можна дати на руки\n"
-                                          "Це вимушений крок, на який дівчата пішли через випадки, коли їх викликалимолодики без грошей/брехали що заплатять після/погрожували. Тому ми змушеніпрацювати за іншим принципом.\n\n"
-                                          "🔥 Я оплатив, що далі?\n"
-                                          "Уточнюємо адрес, дівчина через 40-60 хв. приїжджає.\n\n"
-                                          "🔥 Чи є у вас своє місце?\n"
-                                          " Так, кожна дівчина може прийняти у себе (квартири по місті.) Виїзд за межі міста обговорюється\n\n"
-                                          "Залишились питання?\nПишіть: @MrPhotoshops"
+        bot.send_message(message.chat.id, "🍓 Ответы на часто задаваемые вопросы 🍓\n\n"
+                                          "🔥 Как сделать заказ?"
+                                          "Выберите девушку которая вас заинтересует, если она свободна то будет активен напор 'Заказать'\nПісля натиску слідуйте інструкціям в боті.\n\n"
+                                          "🔥 Как происходит оплата?\n"
+                                          "Мы работаем только по полной предоплате на счет YandexMoney / bitcoint / Это вынужденный шаг из-за жалоб самих девушек, так как клиенты часто не имеют серьезных намерений, отказывались платить или даже били и угрожали.\n\n"
+                                          "🔥 Почему нельзя дать на руки\n"
+                                          "Это вынужденный шаг, на который девушки пошли из-за случаев, когда их вызвали молодые без денег / врали что заплатят после / угрожали. Поэтому мы вынуждены работать по другому принципу.\n\n"
+                                          "🔥 Я оплатил, что дальше?\n"
+                                          "Уточняем адрес, девушка через 40-60 мин. приезжает.\n\n"
+                                          "🔥 Есть ли у вас свое место?\n"
+                                          " Так, каждая девушка может принять у себя (квартиры по городу.) Выезд за пределы города обсуждается\n\n"
+                                          "Остались вопросы? \n Пишите: @"
 
                          , reply_markup=keyboard)
     else:
@@ -541,7 +540,7 @@ def faq(message):
 def bitcoin(message):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Оплатить", url="https://24paybank.net/privat24-uah-to-bitcoin.html"),
+        telebot.types.InlineKeyboardButton("Оплатить", url="https://24paybank.net/"),
         telebot.types.InlineKeyboardButton('Отменить заказ', callback_data='kataloog')
     )
     price = r.get((str("price") + str(message.chat.id))).decode('utf-8')
