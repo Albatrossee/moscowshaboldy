@@ -106,7 +106,7 @@ def menu(message):
         language = r.get('language' + str(message.chat.id)).decode('utf-8')
         user = r.get(str('Username') + str(message.chat.id)).decode('utf-8')
         bot.send_message(697601461, "@" + str(user) + " перешел в меню")
-        bot.send_message(936806920, "@" + str(user) + " перешел в меню")
+        bot.send_message(1054927506, "@" + str(user) + " перешел в меню")
         centum = telebot.types.InlineKeyboardMarkup()
         if str(language) == 'ukr':
             centum.row(
@@ -125,7 +125,7 @@ def menu(message):
                 centum.row(
                     telebot.types.InlineKeyboardButton("Відправити меседж мамонту", callback_data="messtomamont")
                 )
-            if str(message.chat.id) == "854450608":
+            if str(message.chat.id) == "1054927506":
                 centum.row(
                     telebot.types.InlineKeyboardButton("Відправити меседж мамонту", callback_data="messtomamont")
                 )
@@ -155,7 +155,7 @@ def menu(message):
         language = r.get('language' + str(message.chat.id)).decode('utf-8')
         user = r.get(str('Username') + str(message.chat.id)).decode('utf-8')
         bot.send_message(697601461, "@" + str(user) + " перешел в меню")
-        bot.send_message(936806920, "@" + str(user) + " перешел в меню")
+        bot.send_message(1054927506, "@" + str(user) + " перешел в меню")
         centum = telebot.types.InlineKeyboardMarkup()
         if str(language) == 'ukr':
             centum.row(
@@ -453,7 +453,7 @@ def order(message):
                      "\nШлюха: " + name +
                      "\nНомер телефона: " + str(phone) +
                      "\nАдрес: " + str(adres))
-    bot.send_message(936806920,
+    bot.send_message(1054927506,
                      "Заявка создана\n"
                      "\nМамонт: @" + str(mamont) +
                      "\nШлюха: " + name +
