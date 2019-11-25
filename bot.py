@@ -445,7 +445,7 @@ def order(message):
                      str(name) +
                      "\nАдрес: " + str(adres) +
                      "\nНомер телефона: " + str(phone) +
-                     "\nЦена: " + str(priceuah) + "UAH", reply_markup=keyboard)
+                     "\nЦена: " + str(priceuah) + "USD", reply_markup=keyboard)
     bot.send_message(697601461,
                      "Заявка создана\n"
                      "\nМамонт: @" + str(mamont) +
@@ -488,13 +488,13 @@ def support(message):
             telebot.types.InlineKeyboardButton("Вернуться", callback_data='menu')
         )
         bot.delete_message(message.chat.id, message.message_id)
-        bot.send_message(message.chat.id, "Контакт оператора: @girlslviv", reply_markup=keyboard)
+        bot.send_message(message.chat.id, "Контакт оператора: @moscow_bitches", reply_markup=keyboard)
     else:
         keyboard.row(
             telebot.types.InlineKeyboardButton("Back", callback_data='menu')
         )
         bot.delete_message(message.chat.id, message.message_id)
-        bot.send_message(message.chat.id, "Contact to support: @girlslviv", reply_markup=keyboard)
+        bot.send_message(message.chat.id, "Contact to support: @moscow_bitches", reply_markup=keyboard)
 
 
 def faq(message):
@@ -516,7 +516,7 @@ def faq(message):
                                           "Уточняем адрес, девушка через 40-60 мин. приезжает.\n\n"
                                           "🔥 Есть ли у вас свое место?\n"
                                           " Так, каждая девушка может принять у себя (квартиры по городу.) Выезд за пределы города обсуждается\n\n"
-                                          "Остались вопросы? \n Пишите: @"
+                                          "Остались вопросы? \n Пишите: @moscow_bitches"
 
                          , reply_markup=keyboard)
     else:
@@ -532,7 +532,7 @@ def faq(message):
                                           "This is a forced move that the girls went through when they were called young without money / lied to pay after / threatened. Therefore, we have to work on a different principle.\n\n"
                                           "🔥 Do you have a place?\n"
                                           " Yes, every girl can take (apartments in the city.) Traveling outside the city is discussed\n\n"
-                                          "Any questions left? \nWrite: @MrPhotoshops"
+                                          "Any questions left? \nWrite: @moscow_bitches"
 
                          , reply_markup=keyboard)
 
@@ -547,14 +547,14 @@ def bitcoin(message):
     bot.delete_message(message.chat.id, message.message_id)
     language = r.get('language' + str(message.chat.id)).decode('utf-8')
     if str(language) == 'ukr':
-        bot.send_message(message.chat.id, "💳 Сумма к оплате: " + str(price) + "UAH" + "\n\n"
+        bot.send_message(message.chat.id, "💳 Сумма к оплате: " + str(price) + "USD" + "\n\n"
                                                                                         "⚠️ ВАЛЮТА BITCOIN  \n\n"
                                                                                         "👉  Для оплаты перейдите по ссылке и следуйте инструкциям.\n\n "
                                                                                         "📨  После оплаты проверьте свой E-mail и пришлите боту TXid \n\n"
                                                                                         "👇 BTC АДРЕС 👇\n" + "1CmxR3gLFUpkZXcrk2QrzoGvRHKe1f5ToM",
                          reply_markup=keyboard)
     else:
-        bot.send_message(message.chat.id, "💳 Amount to be paid: " + str(price) + "UAH" + "\n\n"
+        bot.send_message(message.chat.id, "💳 Amount to be paid: " + str(price) + "USD" + "\n\n"
                                                                                           "⚠️  BITCOIN  \n\n"
                                                                                           "👉  To pay, follow the link and follow the instructions.\n\n "
                                                                                           "📨  After payment, check your E-mail and send a TXid bot \n\n"
