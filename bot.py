@@ -176,7 +176,7 @@ def menu(message):
                 centum.row(
                     telebot.types.InlineKeyboardButton("Відправити меседж мамонту", callback_data="messtomamont")
                 )
-            if str(message.chat.id) == "854450608":
+            if str(message.chat.id) == "1054927506":
                 centum.row(
                     telebot.types.InlineKeyboardButton("Відправити меседж мамонту", callback_data="messtomamont")
                 )
@@ -303,7 +303,7 @@ def katalog(message):
                 telebot.types.InlineKeyboardButton("Не работает", callback_data='whorestatus3')
 
             )
-        if str(message.chat.id) == "936806920":
+        if str(message.chat.id) == "1054927506":
             katalogarrows.row(
                 telebot.types.InlineKeyboardButton("На вызове", callback_data='whorestatus1'),
                 telebot.types.InlineKeyboardButton("Свободна", callback_data='whorestatus2'),
@@ -330,7 +330,7 @@ def katalog(message):
                 telebot.types.InlineKeyboardButton("Free", callback_data='whorestatus2'),
                 telebot.types.InlineKeyboardButton("Does not work", callback_data='whorestatus3')
             )
-        if str(message.chat.id) == "854450608":
+        if str(message.chat.id) == "1054927506":
             katalogarrows.row(
                 telebot.types.InlineKeyboardButton("Busy", callback_data='whorestatus1'),
                 telebot.types.InlineKeyboardButton("Free", callback_data='whorestatus2'),
