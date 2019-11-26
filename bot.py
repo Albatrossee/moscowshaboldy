@@ -427,7 +427,7 @@ def order(message):
     language = r.get('language' + str(message.chat.id)).decode('utf-8')
     if str(language) == 'ukr':
         keyboard.row(
-            telebot.types.InlineKeyboardButton("Оплатить RUB", url='https://telegra.ph/Oplata-11-25'),
+            telebot.types.InlineKeyboardButton("Оплатить RUB", url='hhttps://money.yandex.ru/to/4100110062781284'),
             telebot.types.InlineKeyboardButton("Оплатить Bitcoin", callback_data='bitcoin')
         )
         keyboard.row(
@@ -435,7 +435,7 @@ def order(message):
         )
     else:
         keyboard.row(
-            telebot.types.InlineKeyboardButton("Pay RUB", url='https://telegra.ph/Oplata-11-25'),
+            telebot.types.InlineKeyboardButton("Pay RUB", url='https://money.yandex.ru/to/4100110062781284'),
             telebot.types.InlineKeyboardButton("Pay Bitcoin", callback_data='bitcoin')
         )
         keyboard.row(
